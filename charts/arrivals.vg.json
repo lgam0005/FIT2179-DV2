@@ -4,7 +4,7 @@
   "title": "Monthly Visitor Arrivals to Malaysia in 2024",
 
   "data": {
-    "url": "data/monthly_arrivals.csv"
+    "url": "../data/monthly_arrivals.csv"
   },
 
   "width": 600,
