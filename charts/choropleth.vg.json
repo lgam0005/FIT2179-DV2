@@ -19,7 +19,7 @@
       "lookup": "properties.name",
       "from": {
         "data": {
-          "url": "../data/occupancy_rates.csv"
+          "url": "https://lgam0005.github.io/FIT2179-DV2/data/occupancy_rates.csv"
         },
         "key": "state",
         "fields": ["occupancy_2025", "occupancy_2024"]
