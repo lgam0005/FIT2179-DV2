@@ -4,7 +4,7 @@
   "title": "Tourism Expenditure Components in 2024",
 
   "data": {
-    "url": "../data/expenditure_components.csv"
+    "url": "https://lgam0005.github.io/FIT2179-DV2/data/expenditure_components.csv"
   },
 
   "width": 320,

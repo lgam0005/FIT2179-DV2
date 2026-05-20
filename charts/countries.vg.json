@@ -4,7 +4,7 @@
   "title": "Top Source Countries for Visitors to Malaysia in 2024",
 
   "data": {
-    "url": "../data/source_countries.csv"
+    "url": "https://lgam0005.github.io/FIT2179-DV2/data/source_countries.csv"
   },
 
   "width": 600,

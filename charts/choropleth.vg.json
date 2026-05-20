@@ -7,7 +7,7 @@
   "height": 420,
 
   "data": {
-    "url": "../data/malaysia_states.geojson",
+    "url": "https://lgam0005.github.io/FIT2179-DV2/data/malaysia_states.geojson",
     "format": {
       "type": "json",
       "property": "features"
