@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": "Tourism Expenditure Components in 2024",
+
+  "data": {
+    "url": "../data/expenditure_components.csv"
+  },
+
+  "width": 320,
+  "height": 320,
+
+  "mark": {
+    "type": "arc",
+    "innerRadius": 85,
+    "outerRadius": 140
+  },
+
+  "encoding": {
+    "theta": {
+      "field": "value_2024",
+      "type": "quantitative"
+    },
+
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "title": "Category",
+      "legend": {
+        "orient": "bottom",
+        "columns": 2
+      }
+    },
+
+    "tooltip": [
+      {
+        "field": "category",
+        "type": "nominal",
+        "title": "Category"
+      },
+      {
+        "field": "value_2024",
+        "type": "quantitative",
+        "title": "2024 Expenditure",
+        "format": ","
+      }
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": "Hotel Occupancy Rate Heatmap",
+
+  "data": {
+    "url": "../data/occupancy_rates.csv"
+  },
+
+  "transform": [
+    {
+      "fold": ["occupancy_2024", "occupancy_2025"],
+      "as": ["Year", "Rate"]
+    }
+  ],
+
+  "width": 850,
+  "height": 320,
+
+  "mark": "rect",
+
+  "encoding": {
+
+    "x": {
+      "field": "Year",
+      "type": "nominal",
+      "title": "Year"
+    },
+
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "title": "State"
+    },
+
+    "color": {
+      "field": "Rate",
+      "type": "quantitative",
+      "title": "Occupancy Rate (%)"
+    },
+
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal"
+      },
+      {
+        "field": "Year",
+        "type": "nominal"
+      },
+      {
+        "field": "Rate",
+        "type": "quantitative"
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": "Monthly Visitor Arrivals to Malaysia in 2024",
+
+  "data": {
+    "url": "../data/monthly_arrivals.csv"
+  },
+
+  "width": 600,
+  "height": 350,
+
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 70
+    },
+    "strokeWidth": 3
+  },
+
+  "encoding": {
+
+    "x": {
+  "field": "Month",
+  "type": "ordinal",
+  "title": "Month",
+  "sort": [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ]
+},
+
+    "y": {
+      "field": "Arrivals 2024",
+      "type": "quantitative",
+      "title": "Visitor Arrivals"
+    },
+
+    "color": {
+      "value": "#1f77b4"
+    },
+
+    "tooltip": [
+      {
+        "field": "Month",
+        "type": "ordinal"
+      },
+      {
+        "field": "Arrivals 2024",
+        "type": "quantitative"
+      }
+    ]
+  }
+}

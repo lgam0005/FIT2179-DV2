@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Malaysia Tourism Recovery</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+
+<body>
+<main class="page">
+
+    <section class="hero">
+        <p class="tag">FIT2179 Data Visualisation 2</p>
+        <h1>Malaysia Tourism Recovery and Travel Patterns</h1>
+        <p class="intro">
+            Malaysia’s tourism sector is recovering after recent disruptions. This dashboard explores how recovery differs across time, visitor markets, expenditure patterns, and Malaysian states.
+        </p>
+    </section>
+
+    <section class="story-block">
+        <h2>Story Overview</h2>
+        <p>
+            The visualisation follows three questions: when did tourism activity strengthen, where did visitors come from, and which states benefited most from the recovery?
+        </p>
+    </section>
+
+    <section class="section-title">
+        <h2>Part 1: National Recovery Trend</h2>
+        <p>Tourism recovery begins with the timing of visitor arrivals across 2024.</p>
+    </section>
+
+    <section class="card wide-card">
+        <div class="chart-text">
+            <h3>1. Monthly Visitor Arrivals</h3>
+            <p>Visitor arrivals generally increased across 2024, with stronger travel activity toward the end of the year.</p>
+            <p class="annotation">Key insight: December recorded one of the strongest visitor arrival peaks.</p>
+        </div>
+        <div class="chart-box" id="chart1"></div>
+    </section>
+
+    <section class="section-title">
+        <h2>Part 2: Visitor Markets and Spending</h2>
+        <p>The next section explains who visits Malaysia and how tourism money is spent.</p>
+    </section>
+
+    <section class="grid">
+        <section class="card">
+            <h3>2. Top Source Countries</h3>
+            <p class="caption">Singapore is the dominant visitor market, followed by Indonesia and China.</p>
+            <div class="chart-box" id="chart2"></div>
+        </section>
+
+        <section class="card">
+            <h3>3. Tourism Expenditure Breakdown</h3>
+            <p class="caption">Shopping forms the largest expenditure component, showing the importance of retail tourism.</p>
+            <div class="chart-box" id="chart4"></div>
+        </section>
+    </section>
+
+    <section class="section-title">
+        <h2>Part 3: State-Level Hotel Recovery</h2>
+        <p>Hotel occupancy and guest numbers reveal that recovery is uneven across Malaysian states.</p>
+    </section>
+
+    <section class="stack">
+        <section class="card">
+            <h3>4. Occupancy Comparison</h3>
+            <p class="caption">Most selected states show higher hotel occupancy in 2025 compared with 2024.</p>
+            <div class="chart-box" id="chart3"></div>
+        </section>
+
+        <section class="card">
+            <h3>5. Recovery Intensity Heatmap</h3>
+            <p class="caption">
+                The heatmap provides a compact overview of hotel occupancy recovery patterns across Malaysian states between 2024 and 2025.
+            </p>
+            <p class="annotation">
+                Key insight: Pahang recorded the strongest hotel occupancy across both years.
+            </p>
+            <div class="chart-box" id="heatmap_chart"></div>
+        </section>
+    </section>
+
+    <section class="card wide-card">
+        <div class="chart-text">
+            <h3>6. Hotel Guest Growth</h3>
+            <p>States with larger hotel guest numbers in 2024 generally remained strong in 2025.</p>
+            <p class="annotation">Key insight: Kuala Lumpur remains a major hotel guest centre.</p>
+        </div>
+        <div class="chart-box" id="scatter_chart"></div>
+    </section>
+
+    <section class="section-title">
+        <h2>Part 4: Spatial Pattern of Recovery</h2>
+        <p>The choropleth map highlights where hotel occupancy is strongest geographically.</p>
+    </section>
+
+    <section class="card">
+        <h3>7. Malaysia Choropleth Map</h3>
+        <p class="caption">Darker states show higher hotel occupancy rates in 2025.</p>
+        <div class="chart-box" id="choropleth_chart"></div>
+    </section>
+
+    <section class="story-block conclusion">
+        <h2>Conclusion</h2>
+        <p>
+            Overall, Malaysia’s tourism recovery appears strong, but not evenly distributed. Visitor arrivals improved, Singapore remained the largest source market, shopping dominated expenditure, and hotel recovery varied clearly across states.
+        </p>
+    </section>
+
+    <footer>
+        Author: Liviru Gamage · Data sources: Tourism Malaysia, DOSM, Paid Accommodation Survey
+    </footer>
+
+</main>
+
+<script>
+    vegaEmbed('#chart1', 'charts/arrivals.vg.json');
+    vegaEmbed('#chart2', 'charts/countries.vg.json');
+    vegaEmbed('#chart3', 'charts/occupancy_compare.vg.json');
+    vegaEmbed('#chart4', 'charts/expenditure_donut.vg.json');
+    vegaEmbed('#heatmap_chart', 'charts/heatmap.vg.json');
+    vegaEmbed('#scatter_chart', 'charts/scatter.vg.json');
+    vegaEmbed('#choropleth_chart', 'charts/choropleth.vg.json');
+</script>
+
+</body>
+</html>
