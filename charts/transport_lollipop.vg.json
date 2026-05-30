@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": "Visitor Arrivals by Transport Mode in 2024",
+
+  "data": {
+    "url": "data/transport_modes.csv"
+  },
+
+  "transform": [
+    {
+      "calculate": "0",
+      "as": "start"
+    }
+  ],
+
+  "width": 600,
+  "height": 260,
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#94a3b8",
+        "strokeWidth": 4
+      },
+      "encoding": {
+        "y": {
+          "field": "transport",
+          "type": "nominal",
+          "sort": "-x",
+          "title": "Transport Mode"
+        },
+        "x": {
+          "field": "start",
+          "type": "quantitative"
+        },
+        "x2": {
+          "field": "arrivals 2024"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 550,
+        "color": "#0f766e"
+      },
+      "encoding": {
+        "y": {
+          "field": "transport",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "arrivals 2024",
+          "type": "quantitative",
+          "title": "Visitor Arrivals"
+        },
+        "tooltip": [
+          {
+            "field": "transport",
+            "type": "nominal",
+            "title": "Transport Mode"
+          },
+          {
+            "field": "arrivals 2024",
+            "type": "quantitative",
+            "format": ",",
+            "title": "Visitor Arrivals"
+          },
+          {
+            "field": "share 2024",
+            "type": "quantitative",
+            "title": "Share (%)"
+          }
+        ]
+      }
+    }
+  ]
+}
