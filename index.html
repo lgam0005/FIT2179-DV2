@@ -104,13 +104,13 @@
         <div class="chart-box" id="choropleth_chart"></div>
     </section>
 
-<div class="wide-card card">
-    <div>
+    <section class="card wide-card">
+    <div class="chart-text">
         <h3>8. Transport Mode Share</h3>
 
         <p>
-            Most international visitors entered Malaysia through land
-            borders, highlighting the importance of regional connectivity.
+            Most international visitors entered Malaysia through land borders,
+            highlighting the importance of regional connectivity.
         </p>
 
         <div class="annotation">
@@ -121,7 +121,31 @@
     <div class="chart-box">
         <div id="transport_lollipop"></div>
     </div>
-</div>
+</section>
+
+<section class="card wide-card">
+    <div class="chart-text">
+        <h3>9. Visitor Receipts Symbol Map</h3>
+
+        <p>
+            Visitor spending is concentrated among Malaysia’s strongest source markets,
+            especially Singapore, China and Indonesia.
+        </p>
+
+        <div class="annotation">
+            Key insight: Singapore generated the highest visitor receipts in 2024.
+        </div>
+    </div>
+
+    <div class="chart-box">
+        <div id="receipts_map"></div>
+    </div>
+</section>
+
+
+
+
+
 
     <section class="story-block conclusion">
         <h2>Conclusion</h2>
@@ -144,7 +168,8 @@
     vegaEmbed('#heatmap_chart', 'charts/heatmap.vg.json');
     vegaEmbed('#scatter_chart', 'charts/scatter.vg.json');
     vegaEmbed('#choropleth_chart', 'charts/choropleth.vg.json');
-    vegaEmbed('#transport_lollipop', 'charts/transport_lollipop.vg.json').catch(console.error);
+    vegaEmbed('#transport_lollipop', 'charts/transport_lollipop.vg.json').catch(console.error)
+    vegaEmbed('#receipts_map', 'charts/visitor_receipts_symbol_map.vg.json').catch(console.error);;
 </script>
 
 </body>

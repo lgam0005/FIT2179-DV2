@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": "Visitor Receipts by Source Market in 2024",
+
+  "width": 600,
+  "height": 350,
+
+  "layer": [
+    {
+      "data": {
+        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e5e7eb",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
+      "projection": {
+        "type": "equalEarth"
+      }
+    },
+
+    {
+      "data": {
+        "url": "data/visitor_receipts_map.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.75,
+        "color": "#0f766e",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "projection": {
+        "type": "equalEarth"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "receipts 2024",
+          "type": "quantitative",
+          "title": "Receipts 2024",
+          "scale": {
+            "range": [50, 1800]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Source Market"
+          },
+          {
+            "field": "receipts 2024",
+            "type": "quantitative",
+            "title": "Receipts 2024 (RM Million)",
+            "format": ",.2f"
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
