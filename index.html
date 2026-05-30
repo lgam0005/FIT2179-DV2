@@ -142,6 +142,26 @@
     </div>
 </section>
 
+<section class="card wide-card">
+
+    <div>
+        <h3>10. Air Connectivity Recovery</h3>
+
+        <p>
+            Air connectivity recovery remains strongest in nearby Asian markets, though emerging regions such as Central Asia experienced the highest growth rates from a smaller base.
+        </p>
+
+        <div class="annotation">
+            Key insight: Southeast Asia provided the largest seat capacity, while Central Asia recorded the fastest growth in available seats.
+        </div>
+    </div>
+
+    <div class="chart-box">
+        <div id="flight_connectivity"></div>
+    </div>
+
+</section>
+
 
 
 
@@ -168,8 +188,11 @@
     vegaEmbed('#heatmap_chart', 'charts/heatmap.vg.json');
     vegaEmbed('#scatter_chart', 'charts/scatter.vg.json');
     vegaEmbed('#choropleth_chart', 'charts/choropleth.vg.json');
-    vegaEmbed('#transport_lollipop', 'charts/transport_lollipop.vg.json').catch(console.error)
-    vegaEmbed('#receipts_map', 'charts/visitor_receipts_symbol_map.vg.json').catch(console.error);;
+    vegaEmbed('#transport_lollipop', 'charts/transport_lollipop.vg.json').catch(console.error);
+    vegaEmbed('#receipts_map', 'charts/visitor_receipts_symbol_map.vg.json').catch(console.error);
+    vegaEmbed('#flight_connectivity',
+          'charts/flight_connectivity.vg.json')
+.catch(console.error);
 </script>
 
 </body>

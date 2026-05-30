@@ -1,0 +1,97 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": "Air Connectivity Recovery by Region",
+
+  "data": {
+    "url": "data/flight_connectivity.csv"
+  },
+
+  "width": 650,
+  "height": 350,
+
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#0f766e",
+        "opacity": 0.85
+      },
+      "encoding": {
+        "x": {
+          "field": "region",
+          "type": "nominal",
+          "title": "Region",
+          "sort": [
+            "South East Asia",
+            "North East Asia",
+            "South Asia",
+            "Middle East",
+            "Southwest Pacific",
+            "Europe",
+            "Africa",
+            "Central Asia"
+          ],
+          "axis": {
+            "labelAngle": -45
+          }
+        },
+        "y": {
+          "field": "seats 2024",
+          "type": "quantitative",
+          "title": "Seat Capacity 2024"
+        },
+        "tooltip": [
+          {"field": "region", "type": "nominal"},
+          {"field": "seats 2024", "type": "quantitative", "format": ","},
+          {"field": "Growth seats", "type": "quantitative"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "#f97316",
+        "strokeWidth": 3,
+        "point": {
+          "filled": true,
+          "size": 80
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "region",
+          "type": "nominal",
+          "sort": [
+            "South East Asia",
+            "North East Asia",
+            "South Asia",
+            "Middle East",
+            "Southwest Pacific",
+            "Europe",
+            "Africa",
+            "Central Asia"
+          ]
+        },
+        "y": {
+          "field": "Growth seats",
+          "type": "quantitative",
+          "title": "Seat Growth (%)",
+          "axis": {
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {"field": "region", "type": "nominal"},
+          {"field": "Growth seats", "type": "quantitative", "title": "Seat Growth (%)"}
+        ]
+      }
+    }
+  ],
+
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  }
+}
