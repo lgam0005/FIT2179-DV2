@@ -38,9 +38,12 @@
     },
 
     "color": {
-      "field": "Year",
-      "type": "nominal"
-    },
+  "field": "Year",
+  "type": "nominal",
+  "scale": {
+    "range": ["#4C78A8", "#1B7F79"]
+  }
+},
 
     "tooltip": [
       {

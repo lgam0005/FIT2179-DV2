@@ -8,11 +8,15 @@
   },
 
   "transform": [
-    {
-      "fold": ["occupancy_2024", "occupancy_2025"],
-      "as": ["Year", "Rate"]
-    }
-  ],
+  {
+    "fold": ["occupancy_2024", "occupancy_2025"],
+    "as": ["Year", "Rate"]
+  },
+  {
+    "calculate": "datum.Year == 'occupancy_2024' ? '2024' : '2025'",
+    "as": "YearLabel"
+  }
+],
 
   "width": 850,
   "height": 320,
@@ -22,10 +26,10 @@
   "encoding": {
 
     "x": {
-      "field": "Year",
-      "type": "nominal",
-      "title": "Year"
-    },
+  "field": "YearLabel",
+  "type": "nominal",
+  "title": "Year"
+},
 
     "y": {
       "field": "state",

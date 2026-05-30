@@ -22,15 +22,24 @@
       "type": "quantitative"
     },
 
-    "color": {
-      "field": "category",
-      "type": "nominal",
-      "title": "Category",
-      "legend": {
-        "orient": "bottom",
-        "columns": 2
-      }
-    },
+  "color": {
+  "field": "category",
+  "type": "nominal",
+  "title": "Category",
+  "scale": {
+    "range": [
+      "#0f766e",
+      "#14b8a6",
+      "#3b82f6",
+      "#8b5cf6",
+      "#f59e0b"
+    ]
+  },
+  "legend": {
+    "orient": "bottom",
+    "columns": 2
+  }
+},
 
     "tooltip": [
       {

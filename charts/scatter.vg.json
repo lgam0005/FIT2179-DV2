@@ -1,53 +1,81 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "title": "Hotel Guests by Malaysian State (2024 vs 2025)",
+  "title": "Hotel Guest Growth by State",
 
   "data": {
-    "url": "https://lgam0005.github.io/FIT2179-DV2/data/hotel_guests_states.csv"
+    "url": "data/hotel_guests_states.csv"
   },
 
-  "width": 500,
+  "width": 600,
   "height": 350,
 
+  "transform": [
+    {
+      "fold": ["guests 2024", "guests 2025"],
+      "as": ["year", "guests"]
+    }
+  ],
+
   "mark": {
-    "type": "circle",
-    "size": 400,
-    "opacity": 0.8
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 120
+    },
+    "strokeWidth": 3
   },
 
   "encoding": {
-
     "x": {
-      "field": "guests_2024",
-      "type": "quantitative",
-      "title": "Hotel Guests in 2024"
+      "field": "year",
+      "type": "nominal",
+      "title": "Year",
+      "axis": {
+        "labelAngle": 0
+      }
     },
 
     "y": {
-      "field": "guests_2025",
+      "field": "guests",
       "type": "quantitative",
-      "title": "Hotel Guests in 2025"
+      "title": "Hotel Guests",
+      "scale": {
+        "zero": false
+      }
     },
 
-    "color": {
-      "field": "state",
-      "type": "nominal",
-      "title": "State"
-    },
+"color": {
+  "field": "state",
+  "type": "nominal",
+  "title": "State",
+  "scale": {
+    "range": [
+      "#0B7285",
+      "#2A9D8F",
+      "#5C7AEA",
+      "#6BAED6",
+      "#4C956C"
+    ]
+  }
+},
 
     "tooltip": [
       {
         "field": "state",
-        "type": "nominal"
+        "type": "nominal",
+        "title": "State"
       },
       {
-        "field": "guests_2024",
-        "type": "quantitative"
+        "field": "year",
+        "type": "nominal",
+        "title": "Year"
       },
       {
-        "field": "guests_2025",
-        "type": "quantitative"
+        "field": "guests",
+        "type": "quantitative",
+        "format": ",",
+        "title": "Hotel Guests"
       }
     ]
   }
